@@ -3,6 +3,7 @@ import { usersResponse } from "./mocks";
 import { UserCard } from "../../components/UserCard/UserCard";
 import { Container } from "./HomeElements";
 import { Column, Row } from "styled-grid-system-component";
+import { Pagination } from "../../components/Pagination/Pagination";
 
 export const Home = () => {
   const { data } = usersResponse;
@@ -20,6 +21,7 @@ export const Home = () => {
           ))}
         </Row>
       </div>
+      <Pagination />
     </Container>
   );
 };

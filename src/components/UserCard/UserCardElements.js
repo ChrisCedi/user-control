@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Card = styled.div`
   border: 0.5px solid ${(props) => props.theme.colors.primary};
   /* padding: 1rem; */
-  min-height: 260px;
+  height: 250px;
   margin-bottom: 1.5rem;
   border-radius: 1rem;
   &:hover {
