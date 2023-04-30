@@ -1,46 +1,24 @@
 import React from "react";
-import styled from "styled-components";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
-import { Button } from "../../components/Button/Button";
+import { Footer } from "../../components/Footer/Footer";
+import { Grid, ItemForm, ItemImage } from "./LoginElements";
+import { Images } from "../../assets/Images";
 
 export const Login = () => {
-  const Grid = styled.div`
-    display: grid;
-    grid-template-columns: 40% 60%;
-    min-height: 100vh;
-    @media (max-width: 800px) {
-      grid-template-columns: 100%;
-    }
-  `;
-
-  const Item1 = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-  `;
-
-  const Item2 = styled.div`
-    background-image: url(https://images.pexels.com/photos/3769022/pexels-photo-3769022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    padding: 10px;
-    @media (max-width: 800px) {
-      display: none;
-    }
-  `;
-
   return (
-    <div>
-      <Grid>
-        <Item1>
-          <h2>Ingresar</h2>
-          <LoginForm />
-        </Item1>
-        <Item2 />
-      </Grid>
-    </div>
+    <Grid>
+      <ItemForm>
+        <box className="boxHeader">
+          <img src={Images.userIcon} alt="userIcon" className="userIcon" />
+          <h2>U control</h2>
+        </box>
+        <h3>Ingresar</h3>
+        <LoginForm />
+        <box className="boxFooter">
+          <Footer />
+        </box>
+      </ItemForm>
+      <ItemImage />
+    </Grid>
   );
 };
