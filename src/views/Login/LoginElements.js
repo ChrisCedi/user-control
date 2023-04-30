@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { media } from "../../theme/breakpoints";
 
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
   min-height: 100vh;
-  @media (max-width: 800px) {
-    grid-template-columns: 100%;
-  }
+  ${media.medium`
+grid-template-columns: 100%;`}
 `;
 
 export const ItemForm = styled.div`
@@ -24,9 +24,6 @@ export const ItemForm = styled.div`
     align-items: center;
     justify-content: flex-start;
     width: 300px;
-    @media (max-width: 800px) {
-      padding-top: 10px;
-    }
   }
   .boxFooter {
     position: fixed;
@@ -41,7 +38,6 @@ export const ItemImage = styled.div`
   background-position: center;
   color: #ffffff;
   padding: 10px;
-  @media (max-width: 800px) {
-    display: none;
-  }
+  ${media.medium`
+    display: none`}
 `;

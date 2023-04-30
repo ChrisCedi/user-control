@@ -6,7 +6,7 @@ export const Logo = () => {
   return (
     <Container>
       <img src={Images.userIcon} alt="userIcon" className="userIcon" />
-      <h2>U control</h2>
+      <h2 className="name">U control</h2>
     </Container>
   );
 };

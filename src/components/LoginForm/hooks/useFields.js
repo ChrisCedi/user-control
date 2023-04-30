@@ -9,7 +9,7 @@ export const useFields = () => {
   const schema = yup.object().shape({
     email: yup
       .string()
-      .email("Formato de email invalido")
+      .email("Formato de email inválido")
       .required("Campo requerido"),
     password: yup.string().required("Campo requerido"),
   });
@@ -26,5 +26,14 @@ export const useFields = () => {
     navigate("/");
   };
 
-  return { register, handleSubmit, onSubmit, errors };
+  const emailRegister = register("email");
+  const passwordRegister = register("password");
+
+  return {
+    handleSubmit,
+    onSubmit,
+    errors,
+    emailRegister,
+    passwordRegister,
+  };
 };
