@@ -28,12 +28,6 @@ export const ItemForm = styled.div`
       padding-top: 10px;
     }
   }
-  .userIcon {
-    height: 40px;
-    margin-right: 5px;
-    background-color: ${(props) => props.theme.colors.primary};
-    border-radius: 8px;
-  }
   .boxFooter {
     position: fixed;
     bottom: 0;
