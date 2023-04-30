@@ -8,6 +8,8 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   padding: 2px 0px;
+  color: ${(props) => props.theme.colors.primary};
+  font-weight: 500;
 `;
 
 export const Container = styled.section`
