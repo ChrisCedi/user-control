@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigates,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import { Helmet } from "react-helmet";
 
@@ -22,7 +17,9 @@ export const Navigation = () => {
                 <Helmet>
                   <title>{route.title}</title>
                 </Helmet>
-                <route.component />
+                <route.layout>
+                  <route.component />
+                </route.layout>
               </>
             }
           />
