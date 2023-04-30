@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   border: 0.5px solid ${(props) => props.theme.colors.primary};
-  /* padding: 1rem; */
+
   height: 250px;
   margin-bottom: 1.5rem;
   border-radius: 1rem;
@@ -12,6 +12,7 @@ export const Card = styled.div`
 
   .backgroundAvatar {
     height: 70px;
+
     background-color: ${(props) => props.theme.colors.secondary};
     border-radius: 1rem 1rem 0rem 0rem;
     display: flex;
