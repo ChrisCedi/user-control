@@ -1,12 +1,12 @@
 import React from "react";
-import { Container } from "./BaseLayoutElements";
+import { Body, Container } from "./BaseLayoutElements";
 import { Header } from "../../components/Header/Header";
 
 export const BaseLayout = ({ children }) => {
   return (
-    <>
+    <Container>
       <Header />
-      <Container>{children}</Container>
-    </>
+      <Body>{children}</Body>
+    </Container>
   );
 };
