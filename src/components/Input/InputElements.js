@@ -8,4 +8,8 @@ export const InputComponent = styled.input.attrs((props) => ({
   border-radius: 3px;
   margin-top: 10px;
   padding: ${(props) => props.size};
+  &:focus {
+    outline: none;
+    border: 2px solid ${(props) => props.theme.colors.secondary};
+  }
 `;
