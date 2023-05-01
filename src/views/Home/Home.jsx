@@ -4,9 +4,7 @@ import { Container } from "./HomeElements";
 import { Column, Row } from "styled-grid-system-component";
 import { Pagination } from "../../components/Pagination/Pagination";
 import Sidebar from "../../components/SideBar/SideBar";
-import { getUsersList } from "../../redux/slices/users";
-import { useDispatch, useSelector } from "react-redux";
-import { useUsers } from "../../redux/slices/users/hooks/useUsers";
+import { useUsers } from "./hooks/useUsers";
 
 export const Home = () => {
   const [sidebar, setSidebar] = useState(false);
