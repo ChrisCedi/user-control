@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userControlApi } from "../../../api/apiConfig";
 import { setToken } from "../../../utils/token";
+import { deleteToken } from "../../../utils/token";
 
 export const authSlice = createSlice({
   name: "auth",
@@ -32,6 +33,20 @@ export const authLogin = (data) => async (dispatch) => {
       setToken(token);
       dispatch(setAuth(token));
     }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const authLogout = () => async (dispatch) => {
+  try {
+    const response = await userControlApi({
+      method: "post",
+      url: "logout",
+    });
+    console.log(response);
+    dispatch(setAuth(null));
+    deleteToken();
   } catch (error) {
     console.log(error);
   }
