@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { UserCard } from "../../components/UserCard/UserCard";
 import { Container } from "./HomeElements";
 import { Column, Row } from "styled-grid-system-component";
