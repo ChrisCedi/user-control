@@ -1,24 +1,32 @@
-import React, { useState } from "react";
-import { usersResponse } from "./mocks";
+import React, { useEffect, useState } from "react";
 import { UserCard } from "../../components/UserCard/UserCard";
 import { Container } from "./HomeElements";
 import { Column, Row } from "styled-grid-system-component";
 import { Pagination } from "../../components/Pagination/Pagination";
 import Sidebar from "../../components/SideBar/SideBar";
+import { getUsersList } from "../../redux/slices/users";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Home = () => {
-  const { data } = usersResponse;
   const [sidebar, setSidebar] = useState(false);
-
   const showSiderbar = () => setSidebar(!sidebar);
+  const { usersData } = useSelector((state) => state.users);
+  const [pageState, setPageState] = useState(
+    usersData.page ? usersData.page : 1
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsersList(pageState));
+  }, [dispatch, pageState]);
 
   return (
     <Container>
-      <h1>Usuarios</h1>
+      <h2 className="title">Usuarios</h2>
       <text className="description">Lista completa de usuarios</text>
       <div className="divCards">
         <Row>
-          {data.map((user, index) => (
+          {usersData?.data?.map((user, index) => (
             <Column sm={12} md={6} lg={4} key={index} onClick={showSiderbar}>
               <UserCard user={user} />
             </Column>
@@ -26,7 +34,7 @@ export const Home = () => {
         </Row>
       </div>
       {sidebar && <Sidebar active={setSidebar} />}
-      <Pagination />
+      <Pagination pageState={pageState} setPageState={setPageState} />
     </Container>
   );
 };
