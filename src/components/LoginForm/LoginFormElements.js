@@ -4,6 +4,11 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  .forgetPassword {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 
 export const Label = styled.label`
@@ -20,8 +25,7 @@ export const Container = styled.section`
   }
 
   .messageError {
-    padding-top: 2px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     font-size: 12px;
     color: red;
   }

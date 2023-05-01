@@ -21,7 +21,7 @@ export const Home = () => {
   return (
     <Container>
       <h2 className="title">Usuarios</h2>
-      <text className="description">Lista completa de usuarios</text>
+      <p className="description">Lista completa de usuarios</p>
       <div className="divCards">
         <Row>
           {usersData?.data?.map((user, index) => (

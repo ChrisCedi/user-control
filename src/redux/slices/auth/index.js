@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { userControlApi } from "../../../api/apiConfig";
 import { setToken } from "../../../utils/token";
 import { deleteToken } from "../../../utils/token";
+import { messagesResponse } from "./constants";
 
 export const authSlice = createSlice({
   name: "auth",
@@ -28,13 +29,13 @@ export const authLogin = (data) => async (dispatch) => {
       data: data,
     });
 
-    console.log(token);
     if (token) {
       setToken(token);
       dispatch(setAuth(token));
     }
   } catch (error) {
-    console.log(error);
+    if (messagesResponse.notFound.error === error.response.data.error)
+      window.alert(messagesResponse.notFound.message);
   }
 };
 
@@ -48,6 +49,6 @@ export const authLogout = () => async (dispatch) => {
     dispatch(setAuth(null));
     deleteToken();
   } catch (error) {
-    console.log(error);
+    window.alert(error.response.data.error);
   }
 };

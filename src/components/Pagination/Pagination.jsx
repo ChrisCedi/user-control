@@ -29,7 +29,7 @@ export const Pagination = ({ pageState, setPageState }) => {
           Siguiente
         </Button>
       </div>
-      <text>{`${usersData.page}/${usersData.totalPages}`}</text>
+      <p>{`${usersData.page}/${usersData.totalPages}`}</p>
     </Container>
   );
 };

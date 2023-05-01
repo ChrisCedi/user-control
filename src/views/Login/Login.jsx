@@ -8,14 +8,14 @@ export const Login = () => {
   return (
     <Grid>
       <ItemForm>
-        <box className="boxHeader">
+        <div className="boxHeader">
           <Logo />
-        </box>
+        </div>
         <h3>Ingresar</h3>
         <LoginForm />
-        <box className="boxFooter">
+        <div className="boxFooter">
           <Footer />
-        </box>
+        </div>
       </ItemForm>
       <ItemImage />
     </Grid>

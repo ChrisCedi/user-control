@@ -11,7 +11,7 @@ export const UserCard = ({ user }) => {
         <h2>
           {user.firstName} {user.lastName}
         </h2>
-        <text>{user.email}</text>
+        <p>{user.email}</p>
       </div>
     </Card>
   );

@@ -18,7 +18,7 @@ export const LoginForm = () => {
             elements={emailRegister}
             name="emal"
           />
-          <text className="messageError">{errors.email?.message}</text>
+          <span className="messageError">{errors.email?.message}</span>
         </div>
         <div className="divInput">
           <Label>Contraseña</Label>
@@ -29,9 +29,14 @@ export const LoginForm = () => {
             elements={passwordRegister}
             name="password"
           />
-          <text className="messageError">{errors.password?.message}</text>
+          <span className="messageError">{errors.password?.message}</span>
         </div>
-        <text>¿Olvidate tu contraseña?</text>
+        <span
+          className="forgetPassword"
+          onClick={() => window.alert("Estamos trabajando en esta función")}
+        >
+          ¿Olvidaste tu contraseña?
+        </span>
         <Button type="submit">Enviar</Button>
       </Form>
     </Container>
