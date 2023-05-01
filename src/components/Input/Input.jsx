@@ -4,8 +4,6 @@ import { InputComponent } from "./InputElements";
 export const Input = (props) => {
   const { onChange, onBlur, name, ref } = props.elements;
 
-  console.log(props.elements);
-
   return (
     <InputComponent
       {...props}
