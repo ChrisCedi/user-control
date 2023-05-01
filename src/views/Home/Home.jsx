@@ -6,19 +6,12 @@ import { Pagination } from "../../components/Pagination/Pagination";
 import Sidebar from "../../components/SideBar/SideBar";
 import { getUsersList } from "../../redux/slices/users";
 import { useDispatch, useSelector } from "react-redux";
+import { useUsers } from "../../redux/slices/users/hooks/useUsers";
 
 export const Home = () => {
   const [sidebar, setSidebar] = useState(false);
   const showSiderbar = () => setSidebar(!sidebar);
-  const { usersData } = useSelector((state) => state.users);
-  const [pageState, setPageState] = useState(
-    usersData.page ? usersData.page : 1
-  );
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getUsersList(pageState));
-  }, [dispatch, pageState]);
+  const { usersData, pageState, setPageState } = useUsers();
 
   return (
     <Container>
