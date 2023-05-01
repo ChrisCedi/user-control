@@ -1,5 +1,5 @@
 import axios from "axios";
 
-export const userApi = axios.create({
+export const userControlApi = axios.create({
   baseURL: "https://reqres.in/api",
 });
