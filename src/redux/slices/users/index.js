@@ -27,3 +27,20 @@ export const getUsersList = (page) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const updateUser = (id) => async (dispatch) => {
+  try {
+    const response = await userApi({
+      method: "put",
+      url: `users/${id}`,
+      data: {
+        first_name: "christian",
+        last_name: "cedillo",
+      },
+    });
+
+    if (response) getUsersList();
+  } catch (error) {
+    console.log(error);
+  }
+};

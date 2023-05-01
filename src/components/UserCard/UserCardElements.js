@@ -7,6 +7,7 @@ export const Card = styled.div`
   margin-bottom: 1.5rem;
   border-radius: 1rem;
   &:hover {
+    cursor: pointer;
     border: 0.5px solid ${(props) => props.theme.colors.secondary};
   }
 

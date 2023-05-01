@@ -9,7 +9,14 @@ import { useUsers } from "./hooks/useUsers";
 export const Home = () => {
   const [sidebar, setSidebar] = useState(false);
   const showSiderbar = () => setSidebar(!sidebar);
-  const { usersData, pageState, setPageState } = useUsers();
+  const {
+    usersData,
+    pageState,
+    setPageState,
+    updateUser,
+    dispatch,
+    getUsersList,
+  } = useUsers();
 
   return (
     <Container>
@@ -18,7 +25,17 @@ export const Home = () => {
       <div className="divCards">
         <Row>
           {usersData?.data?.map((user, index) => (
-            <Column sm={12} md={6} lg={4} key={index} onClick={showSiderbar}>
+            <Column
+              sm={12}
+              md={6}
+              lg={4}
+              key={index}
+              onClick={() => {
+                showSiderbar();
+                dispatch(updateUser(user.id));
+                dispatch(getUsersList(pageState));
+              }}
+            >
               <UserCard user={user} />
             </Column>
           ))}
