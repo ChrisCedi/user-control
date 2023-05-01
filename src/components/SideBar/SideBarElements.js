@@ -28,6 +28,9 @@ export const Container = styled.div`
     to {
       opacity: 1;
       width: 400px;
+      ${media.small`
+    width: 100%
+  `}
     }
   }
   ${media.small`
