@@ -1,46 +1,33 @@
 import React from "react";
-import { Form, Label, Input, Container } from "./LoginFormElements";
+import { Form, Label, Container } from "./LoginFormElements";
 import { Button } from "../Button/Button";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { useFields } from "./hooks/useFields";
+import { Input } from "../Input/Input";
 
 export const LoginForm = () => {
-  const schema = yup.object().shape({
-    email: yup
-      .string()
-      .email("Formato de email invalido")
-      .required("Campo requerido"),
-    password: yup.string().required("Campo requerido"),
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = (values) => {
-    console.log("hola", values);
-  };
+  const { handleSubmit, onSubmit, errors, emailRegister, passwordRegister } =
+    useFields();
 
   return (
     <Container>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <div className="divInput">
           <Label>Email</Label>
-          <Input placeholder="correo@dominio.com" {...register("email")} />
-
+          <Input
+            placeholder="correo@dominio.com"
+            elements={emailRegister}
+            name="emal"
+          />
           <text className="messageError">{errors.email?.message}</text>
         </div>
         <div className="divInput">
           <Label>Contraseña</Label>
+
           <Input
             type="password"
             placeholder="Contraseña"
-            {...register("password")}
+            elements={passwordRegister}
+            name="password"
           />
           <text className="messageError">{errors.password?.message}</text>
         </div>
