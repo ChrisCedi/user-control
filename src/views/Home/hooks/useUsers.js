@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsersList } from "../../../redux/slices/users";
+import { getUsersList, updateUser } from "../../../redux/slices/users";
 
 export const useUsers = () => {
   const { usersData } = useSelector((state) => state.users);
@@ -14,5 +14,12 @@ export const useUsers = () => {
     dispatch(getUsersList(pageState));
   }, [dispatch, pageState]);
 
-  return { usersData, pageState, setPageState };
+  return {
+    usersData,
+    pageState,
+    setPageState,
+    updateUser,
+    dispatch,
+    getUsersList,
+  };
 };

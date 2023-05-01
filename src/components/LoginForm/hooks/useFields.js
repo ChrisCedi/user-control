@@ -1,10 +1,11 @@
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { authLogin } from "../../../redux/slices/auth";
 
 export const useFields = () => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const schema = yup.object().shape({
     email: yup
@@ -23,7 +24,7 @@ export const useFields = () => {
   });
 
   const onSubmit = (values) => {
-    navigate("/");
+    dispatch(authLogin(values));
   };
 
   const emailRegister = register("email");
