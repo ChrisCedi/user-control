@@ -20,7 +20,6 @@ export const useUsers = () => {
     pageState,
     setPageState,
     updateUser,
-    dispatch,
     getUsersList,
     getUserById,
   };

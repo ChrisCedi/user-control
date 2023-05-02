@@ -23,6 +23,7 @@ export const userSelectedMap = (values) => {
     lastName: values.last_name,
     email: values.email,
     id: values.id,
+    avatar: values.avatar,
   };
 
   return userMapped;

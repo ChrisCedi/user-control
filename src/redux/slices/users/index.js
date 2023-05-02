@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { userControlApi } from "../../../api/apiConfig";
+import { userControlApi, contentApi } from "../../../api/apiConfig";
 import { usersMap, userSelectedMap, updateUserMap } from "./helpers";
 import { getToken } from "../../../utils/token";
 
@@ -8,6 +8,7 @@ export const userSlice = createSlice({
   initialState: {
     usersData: {},
     userSelected: {},
+    postsUser: [],
   },
   reducers: {
     setUserList: (state, action) => {
@@ -17,11 +18,16 @@ export const userSlice = createSlice({
     setUserSelected: (state, action) => {
       state.userSelected = action.payload;
     },
+    setPostsUser: (state, action) => {
+      state.postsUser = action.payload;
+    },
   },
 });
 
-export const { setUserList, setUserSelected } = userSlice.actions;
+export const { setUserList, setUserSelected, setPostsUser } = userSlice.actions;
 export default userSlice.reducer;
+
+//user
 
 export const getUsersList = (page) => async (dispatch) => {
   try {
@@ -59,6 +65,21 @@ export const updateUser = (values) => async (dispatch) => {
     console.log(response);
 
     if (response) dispatch(getUsersList(1));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//content
+
+export const getPostsById = (id) => async (dispatch) => {
+  try {
+    const { status, data } = await contentApi({
+      method: "get",
+      url: `posts?userId=${id}`,
+    });
+
+    if (status === 200) dispatch(setPostsUser(data));
   } catch (error) {
     console.log(error);
   }

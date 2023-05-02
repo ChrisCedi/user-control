@@ -11,9 +11,11 @@ export const Card = styled.div`
     align-items: center;
   }
   .avatar {
-    height: 40px;
+    height: 70px;
     border-radius: 6rem;
     margin-right: 10px;
+    ${media.small`
+    height: 50px`}
   }
   .divider {
     border-top: 1px solid #bbb;
@@ -28,5 +30,10 @@ export const Card = styled.div`
   .titlePost {
     font-weight: 600;
     font-size: 18px;
+  }
+  .lastName {
+    padding-left: 5px;
+    ${media.small`
+    display: none`}
   }
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Card = styled.div`
   border: 0.5px solid ${(props) => props.theme.colors.primary};
 
-  height: 220px;
+  min-height: 220px;
   margin-bottom: 1.5rem;
   border-radius: 1rem;
   &:hover {
@@ -23,6 +23,12 @@ export const Card = styled.div`
 
   .divInformation {
     padding: 1rem 1rem;
+  }
+  .divButtons {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
   }
 `;
 
