@@ -26,8 +26,8 @@ Para levantar el proyecto ejecutar;
  ## Login
  
  Prueba iniciando con esta credencial:
- email: tobias.funke@reqres.in
- password: contraseña123
+ - email: tobias.funke@reqres.in
+ - password: contraseña123
 
 ## IMPORTANTE
 
