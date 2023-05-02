@@ -27,7 +27,7 @@ export const UserCard = ({ user, showSiderbar }) => {
             Publicaciones
           </Button>
 
-          <Button>Álbum</Button>
+          <Button onClick={() => navigate(`albums/${user.id}`)}>Álbum</Button>
 
           <Button
             onClick={() => {

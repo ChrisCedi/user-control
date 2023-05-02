@@ -9,6 +9,7 @@ export const userSlice = createSlice({
     usersData: {},
     userSelected: {},
     postsUser: [],
+    albumsUser: [],
   },
   reducers: {
     setUserList: (state, action) => {
@@ -21,10 +22,14 @@ export const userSlice = createSlice({
     setPostsUser: (state, action) => {
       state.postsUser = action.payload;
     },
+    setAlbumsUser: (state, action) => {
+      state.albumsUser = action.payload;
+    },
   },
 });
 
-export const { setUserList, setUserSelected, setPostsUser } = userSlice.actions;
+export const { setUserList, setUserSelected, setPostsUser, setAlbumsUser } =
+  userSlice.actions;
 export default userSlice.reducer;
 
 //user
@@ -80,6 +85,19 @@ export const getPostsById = (id) => async (dispatch) => {
     });
 
     if (status === 200) dispatch(setPostsUser(data));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getAlbumsById = (id) => async (dispatch) => {
+  try {
+    const { status, data } = await contentApi({
+      method: "get",
+      url: `users/${id}/albums`,
+    });
+
+    if (status === 200) dispatch(setAlbumsUser(data));
   } catch (error) {
     console.log(error);
   }

@@ -8,6 +8,7 @@ import {
   getUserById,
   setPostsUser,
 } from "../../redux/slices/users";
+import { motion } from "framer-motion";
 
 export const Posts = () => {
   const { id } = useParams();
@@ -43,12 +44,22 @@ export const Posts = () => {
         </div>
       ) : (
         postsUser?.map((post, index) => (
-          <PostCard
-            post={post}
-            key={index}
-            user={userSelected}
-            handleId={handleChangePostId}
-          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+          >
+            <PostCard
+              post={post}
+              key={index}
+              user={userSelected}
+              handleId={handleChangePostId}
+            />
+          </motion.div>
         ))
       )}
     </Container>

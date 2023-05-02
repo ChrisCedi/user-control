@@ -6,6 +6,7 @@ import { Pagination } from "../../components/Pagination/Pagination";
 import Sidebar from "../../components/SideBar/SideBar";
 import { useUsers } from "../../redux/slices/users/hooks/useUsers";
 import { UpdateUserForm } from "../../components/UpdateUserForm/UpdateUserForm";
+import { motion } from "framer-motion";
 
 export const Home = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -20,7 +21,17 @@ export const Home = () => {
         <Row>
           {usersData?.data?.map((user, index) => (
             <Column sm={12} md={6} lg={4} key={index}>
-              <UserCard user={user} showSiderbar={showSiderbar} />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
+                <UserCard user={user} showSiderbar={showSiderbar} />
+              </motion.div>
             </Column>
           ))}
         </Row>
