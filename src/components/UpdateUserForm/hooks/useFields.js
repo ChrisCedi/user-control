@@ -1,10 +1,11 @@
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const useFields = () => {
   const dispatch = useDispatch();
+  const { userSelected } = useSelector((state) => state.users);
 
   const schema = yup.object().shape({
     firstName: yup.string().required("Campo requerido"),
@@ -19,12 +20,12 @@ export const useFields = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
   const onSubmit = (values) => {
-    // dispatch(authLogin(values));
     console.log(values);
   };
 
@@ -39,5 +40,7 @@ export const useFields = () => {
     firstName,
     lastName,
     email,
+    userSelected,
+    setValue,
   };
 };

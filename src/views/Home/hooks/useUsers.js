@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsersList, updateUser } from "../../../redux/slices/users";
+import {
+  getUsersList,
+  updateUser,
+  getUserById,
+} from "../../../redux/slices/users";
 
 export const useUsers = () => {
   const { usersData } = useSelector((state) => state.users);
@@ -21,5 +25,6 @@ export const useUsers = () => {
     updateUser,
     dispatch,
     getUsersList,
+    getUserById,
   };
 };

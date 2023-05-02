@@ -16,3 +16,13 @@ export const usersMap = (values) => {
 
   return usersMapped;
 };
+
+export const userSelectedMap = (values) => {
+  const userMapped = {
+    firstName: values.first_name,
+    lastName: values.last_name,
+    email: values.email,
+  };
+
+  return userMapped;
+};

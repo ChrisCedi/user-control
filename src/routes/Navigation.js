@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export const Navigation = () => {
   return (
@@ -13,14 +13,14 @@ export const Navigation = () => {
             path={route.path}
             exact={route.exact}
             element={
-              <>
+              <HelmetProvider>
                 <Helmet>
                   <title>{route.title}</title>
                 </Helmet>
                 <route.layout>
                   <route.component />
                 </route.layout>
-              </>
+              </HelmetProvider>
             }
           />
         ))}
