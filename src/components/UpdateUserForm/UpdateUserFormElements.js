@@ -21,7 +21,7 @@ export const Container = styled.section`
   .divInput {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
   }
 
   .messageError {

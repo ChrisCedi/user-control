@@ -5,19 +5,19 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.colors.background.main};
   position: fixed;
   box-shadow: 0px 3px 6px #00000029;
-  height: 100%;
+  height: -webkit-fill-available;
+  padding: 2rem;
   top: 0px;
   left: 0px;
-  width: 400px;
-  left: ${(props) => (props.sidebar ? "0" : "-100%")};
+  width: 350px;
+  left: ${(props) => (props.sidebar ? "0" : "--webkit-fill-available;")};
   animation: showSidebar 0.4s;
   > svg {
     position: fixed;
     color: white;
     width: 30px;
     height: 30px;
-    margin-top: 32px;
-    margin-left: 32px;
+
     cursor: pointer;
   }
   @keyframes showSidebar {
@@ -27,14 +27,14 @@ export const Container = styled.div`
     }
     to {
       opacity: 1;
-      width: 400px;
+      width: 350px;
       ${media.small`
-    width: 100%
+    width: -webkit-fill-available;
   `}
     }
   }
   ${media.small`
-    width: 100%
+    width: -webkit-fill-available;
   `}
 
   .boxButton {
@@ -44,11 +44,7 @@ export const Container = styled.div`
   }
   .closeIcon {
     height: 25px;
-    padding-top: 100px;
+    padding-top: 85px;
     cursor: pointer;
   }
-`;
-
-export const Content = styled.div`
-  margin-top: 100px;
 `;

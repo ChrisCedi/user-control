@@ -16,3 +16,24 @@ export const usersMap = (values) => {
 
   return usersMapped;
 };
+
+export const userSelectedMap = (values) => {
+  const userMapped = {
+    firstName: values.first_name,
+    lastName: values.last_name,
+    email: values.email,
+    id: values.id,
+  };
+
+  return userMapped;
+};
+
+export const updateUserMap = (values) => {
+  const dataMapped = {
+    first_name: values.firstName,
+    last_name: values.lastName,
+    email: values.email,
+  };
+
+  return dataMapped;
+};

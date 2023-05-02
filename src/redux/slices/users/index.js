@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userControlApi } from "../../../api/apiConfig";
-import { usersMap } from "./helpers";
+import { usersMap, userSelectedMap, updateUserMap } from "./helpers";
+import { getToken } from "../../../utils/token";
 
 export const userSlice = createSlice({
   name: "users",
@@ -13,33 +14,51 @@ export const userSlice = createSlice({
       state.usersData = action.payload;
       state.page = action.payload;
     },
+    setUserSelected: (state, action) => {
+      state.userSelected = action.payload;
+    },
   },
 });
 
-export const { setUserList } = userSlice.actions;
+export const { setUserList, setUserSelected } = userSlice.actions;
 export default userSlice.reducer;
 
 export const getUsersList = (page) => async (dispatch) => {
   try {
-    const response = await userControlApi.get(`users?page=${page}`);
-    dispatch(setUserList(usersMap(response.data)));
+    const { data, status } = await userControlApi.get(`users?page=${page}`);
+    if (status === 200) dispatch(setUserList(usersMap(data)));
   } catch (error) {
     console.log(error);
   }
 };
 
-export const updateUser = (id) => async (dispatch) => {
+export const getUserById = (id) => async (dispatch) => {
+  try {
+    const { data, status } = await userControlApi({
+      method: "get",
+      url: `users/${id}`,
+    });
+
+    if (status === 200) dispatch(setUserSelected(userSelectedMap(data.data)));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateUser = (values) => async (dispatch) => {
   try {
     const response = await userControlApi({
       method: "put",
-      url: `users/${id}`,
-      data: {
-        first_name: "christian",
-        last_name: "cedillo",
+      url: `users/${values}`,
+      data: updateUserMap(values),
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
       },
     });
 
-    if (response) getUsersList();
+    console.log(response);
+
+    if (response) dispatch(getUsersList(1));
   } catch (error) {
     console.log(error);
   }

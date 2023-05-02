@@ -6,9 +6,10 @@ export const Container = styled.section`
   }
   .description {
     padding-left: 1rem;
-    padding-bottom: 2rem;
   }
   .divCards {
-    padding-top: 2rem;
+    padding-top: 1rem;
+  }
+  .sidebarBody {
   }
 `;
