@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../Button/Button";
 import { Card } from "./PostCardElements";
 
-export const PostCard = ({ post, user }) => {
+export const PostCard = ({ post, user, handleId }) => {
   return (
     <Card>
       <div className="divHeaderPost">
@@ -11,7 +11,7 @@ export const PostCard = ({ post, user }) => {
           <p>{user.firstName}</p>
           <p className="lastName">{user.lastName}</p>
         </div>
-        <Button>Eliminar</Button>
+        <Button onClick={() => handleId(post.id)}>Eliminar</Button>
       </div>
       <div className="divBody">
         <p className="titlePost">{post.title}</p>

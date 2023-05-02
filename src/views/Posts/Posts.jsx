@@ -1,19 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Container } from "./PostsElements";
 import { PostCard } from "../../components/PostCard/PostCard";
 import { useDispatch, useSelector } from "react-redux";
-import { getPostsById, getUserById } from "../../redux/slices/users";
+import {
+  getPostsById,
+  getUserById,
+  setPostsUser,
+} from "../../redux/slices/users";
 
 export const Posts = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const [postId, setPostId] = useState(null);
   const { postsUser, userSelected } = useSelector((state) => state.users);
+
   useEffect(() => {
     dispatch(getPostsById(id));
     dispatch(getUserById(id));
   }, [dispatch, id]);
 
+  useEffect(() => {
+    dispatch(setPostsUser(postsUser.filter((post) => post.id !== postId)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [postId]);
+
+  const handleChangePostId = (id) => {
+    setPostId(id);
+  };
   if (!postsUser) return null;
 
   return (
@@ -29,7 +43,12 @@ export const Posts = () => {
         </div>
       ) : (
         postsUser?.map((post, index) => (
-          <PostCard post={post} key={index} user={userSelected} />
+          <PostCard
+            post={post}
+            key={index}
+            user={userSelected}
+            handleId={handleChangePostId}
+          />
         ))
       )}
     </Container>
