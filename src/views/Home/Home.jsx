@@ -10,8 +10,7 @@ import { UpdateUserForm } from "../../components/UpdateUserForm/UpdateUserForm";
 export const Home = () => {
   const [sidebar, setSidebar] = useState(false);
   const showSiderbar = () => setSidebar(!sidebar);
-  const { usersData, pageState, setPageState, dispatch, getUserById } =
-    useUsers();
+  const { usersData, pageState, setPageState } = useUsers();
 
   return (
     <Container>
@@ -20,17 +19,8 @@ export const Home = () => {
       <div className="divCards">
         <Row>
           {usersData?.data?.map((user, index) => (
-            <Column
-              sm={12}
-              md={6}
-              lg={4}
-              key={index}
-              onClick={() => {
-                dispatch(getUserById(user.id));
-                showSiderbar();
-              }}
-            >
-              <UserCard user={user} />
+            <Column sm={12} md={6} lg={4} key={index}>
+              <UserCard user={user} showSiderbar={showSiderbar} />
             </Column>
           ))}
         </Row>
