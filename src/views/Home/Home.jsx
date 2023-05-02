@@ -5,6 +5,7 @@ import { Column, Row } from "styled-grid-system-component";
 import { Pagination } from "../../components/Pagination/Pagination";
 import Sidebar from "../../components/SideBar/SideBar";
 import { useUsers } from "./hooks/useUsers";
+import { UpdateUserForm } from "../../components/UpdateUserForm/UpdateUserForm";
 
 export const Home = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -41,7 +42,14 @@ export const Home = () => {
           ))}
         </Row>
       </div>
-      {sidebar && <Sidebar active={setSidebar} />}
+      {sidebar && (
+        <Sidebar active={setSidebar}>
+          <div className="sidebarBody">
+            <h1>Editar usuario</h1>
+            <UpdateUserForm />
+          </div>
+        </Sidebar>
+      )}
       <Pagination pageState={pageState} setPageState={setPageState} />
     </Container>
   );

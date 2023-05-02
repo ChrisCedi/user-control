@@ -11,4 +11,6 @@ export const Container = styled.section`
   .divCards {
     padding-top: 2rem;
   }
+  .sidebarBody {
+  }
 `;
