@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getUsersList,
-  updateUser,
-  getUserById,
-} from "../../../redux/slices/users";
+import { getUsersList, updateUser, getUserById } from "../index";
 
 export const useUsers = () => {
   const { usersData } = useSelector((state) => state.users);

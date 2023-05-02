@@ -4,7 +4,7 @@ import { Container } from "./HomeElements";
 import { Column, Row } from "styled-grid-system-component";
 import { Pagination } from "../../components/Pagination/Pagination";
 import Sidebar from "../../components/SideBar/SideBar";
-import { useUsers } from "./hooks/useUsers";
+import { useUsers } from "../../redux/slices/users/hooks/useUsers";
 import { UpdateUserForm } from "../../components/UpdateUserForm/UpdateUserForm";
 
 export const Home = () => {
