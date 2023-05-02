@@ -12,4 +12,8 @@ export const Container = styled.div`
   ${media.small`
       padding: 0rem 1.5rem;
     `}
+
+  .divLogo {
+    cursor: pointer;
+  }
 `;
