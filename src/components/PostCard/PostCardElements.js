@@ -36,4 +36,15 @@ export const Card = styled.div`
     ${media.small`
     display: none`}
   }
+  .divButtonsModal {
+    display: flex;
+    justify-content: space-between;
+  }
+  .divCloseButton {
+    display: flex;
+    justify-content: flex-end;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
