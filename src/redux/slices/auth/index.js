@@ -41,11 +41,10 @@ export const authLogin = (data) => async (dispatch) => {
 
 export const authLogout = () => async (dispatch) => {
   try {
-    const response = await userControlApi({
+    await userControlApi({
       method: "post",
       url: "logout",
     });
-    console.log(response);
     dispatch(setAuth(null));
     deleteToken();
   } catch (error) {

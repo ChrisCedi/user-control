@@ -67,8 +67,6 @@ export const updateUser = (values) => async (dispatch) => {
       },
     });
 
-    console.log(response);
-
     if (response) dispatch(getUsersList(1));
   } catch (error) {
     console.log(error);
