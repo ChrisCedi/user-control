@@ -39,7 +39,7 @@ export const Home = () => {
         <Sidebar active={setSidebar}>
           <div className="sidebarBody">
             <h1>Editar usuario</h1>
-            <UpdateUserForm />
+            <UpdateUserForm handleSidebar={setSidebar} />
           </div>
         </Sidebar>
       )}

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userControlApi } from "../../../api/apiConfig";
-import { usersMap, userSelectedMap } from "./helpers";
+import { usersMap, userSelectedMap, updateUserMap } from "./helpers";
+import { getToken } from "../../../utils/token";
 
 export const userSlice = createSlice({
   name: "users",
@@ -44,18 +45,20 @@ export const getUserById = (id) => async (dispatch) => {
   }
 };
 
-export const updateUser = (id) => async (dispatch) => {
+export const updateUser = (values) => async (dispatch) => {
   try {
     const response = await userControlApi({
       method: "put",
-      url: `users/${id}`,
-      data: {
-        first_name: "christian",
-        last_name: "cedillo",
+      url: `users/${values}`,
+      data: updateUserMap(values),
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
       },
     });
 
-    if (response) getUsersList();
+    console.log(response);
+
+    if (response) dispatch(getUsersList(1));
   } catch (error) {
     console.log(error);
   }

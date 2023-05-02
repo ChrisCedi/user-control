@@ -4,7 +4,7 @@ import { Button } from "../Button/Button";
 import { useFields } from "./hooks/useFields";
 import { Input } from "../Input/Input";
 
-export const UpdateUserForm = () => {
+export const UpdateUserForm = ({ handleSidebar }) => {
   const {
     handleSubmit,
     onSubmit,
@@ -14,7 +14,7 @@ export const UpdateUserForm = () => {
     email,
     userSelected,
     setValue,
-  } = useFields();
+  } = useFields(handleSidebar);
 
   useEffect(() => {
     let keys = Object.keys(userSelected);
@@ -23,6 +23,7 @@ export const UpdateUserForm = () => {
       setValue(`${keys[0]}`, `${userSelected.firstName}`);
       setValue(`${keys[1]}`, `${userSelected.lastName}`);
       setValue(`${keys[2]}`, `${userSelected.email}`);
+      setValue(`${keys[3]}`, `${userSelected.id}`);
     }
   }, [userSelected, setValue]);
 

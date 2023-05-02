@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsersList, updateUser, getUserById } from "../index";
 
 export const useUsers = () => {
-  const { usersData } = useSelector((state) => state.users);
+  const { usersData, userSelected } = useSelector((state) => state.users);
 
   const [pageState, setPageState] = useState(
     usersData.page ? usersData.page : 1
@@ -16,6 +16,7 @@ export const useUsers = () => {
 
   return {
     usersData,
+    userSelected,
     pageState,
     setPageState,
     updateUser,
