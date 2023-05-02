@@ -2,7 +2,7 @@
 
 User control es un dashboard de control de contenido de los usuarios, al ingresar se podran ver la lista completa de usuarios de los cuales podras editar información del usuario, ver sus publicaciones, eliminar publicaciones y ver sus álbums respectivos.
 
-##Herramientas
+## Herramientas
 Las herramientas utilizadas para la realización de este proyecto son:
 - React js
 - Redux Toolkit
@@ -21,7 +21,7 @@ Para instalar las dependencias necesarias para este proyecto, ejecutar el siguie
 
 Para levantar el proyecto ejecutar;
  
- ###`yarn start`
+ ### `yarn start`
 
 ##IMPORTANTE
 
