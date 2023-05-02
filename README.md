@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# user control
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+User control es un dashboard de control de contenido de los usuarios, al ingresar se podran ver la lista completa de usuarios de los cuales podras editar información del usuario, ver sus publicaciones, eliminar publicaciones y ver sus álbums respectivos.
 
-## Available Scripts
+##Herramientas
+Las herramientas utilizadas para la realización de este proyecto son:
+- React js
+- Redux Toolkit
+- Styled components
+- React hook form
+- Yup
+- Axios
+- React router dom
+- Framer motion
+- Postman
+- React Helmet
 
-In the project directory, you can run:
+Para instalar las dependencias necesarias para este proyecto, ejecutar el siguiente comando:
 
-### `npm start`
+### `yarn`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para levantar el proyecto ejecutar;
+ 
+ ###`yarn start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##IMPORTANTE
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+En la parte de editar usuario utilice la api de reqres: update user, por lo que la petición se realiza correctamente posteriormente se hace la petición con la lista de usuarios actualizada, pero al ser datos estaticos proporcionados por la api, no se veran cambios reflejados, pero si en el estado de la petición put.
+Para los posts realizo la petición de posts por id, pero al eliminar un post el arreglo se manipula de manera local, por lo que si se podra visualizar los cambios en la lista.
