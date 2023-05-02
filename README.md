@@ -23,7 +23,7 @@ Para levantar el proyecto ejecutar;
  
  ### `yarn start`
 
-##IMPORTANTE
+## IMPORTANTE
 
 En la parte de editar usuario utilice la api de reqres: update user, por lo que la petición se realiza correctamente posteriormente se hace la petición con la lista de usuarios actualizada, pero al ser datos estaticos proporcionados por la api, no se veran cambios reflejados, pero si en el estado de la petición put.
 Para los posts realizo la petición de posts por id, pero al eliminar un post el arreglo se manipula de manera local, por lo que si se podra visualizar los cambios en la lista.
