@@ -22,6 +22,12 @@ Para instalar las dependencias necesarias para este proyecto, ejecutar el siguie
 Para levantar el proyecto ejecutar;
  
  ### `yarn start`
+ 
+ ## Login
+ 
+ Prueba iniciando con esta credencial:
+ email: tobias.funke@reqres.in
+ password: contraseña123
 
 ## IMPORTANTE
 
