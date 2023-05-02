@@ -6,7 +6,7 @@ export const ButtonComponent = styled.button`
     props.$primary ? props.theme.colors.primary : props.theme.colors.secondary};
   color: white;
   font-size: 1em;
-  margin-right: 1em;
+  /* margin-right: 1em; */
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 0.25em 1em;

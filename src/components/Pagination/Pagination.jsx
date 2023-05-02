@@ -19,15 +19,17 @@ export const Pagination = ({ pageState, setPageState }) => {
           Anterior
         </Button>
 
-        <Button
-          onClick={() => {
-            setPageState(pageState + 1);
-            window.scroll(0, 0);
-          }}
-          disabled={pageState >= usersData.totalPages ? true : false}
-        >
-          Siguiente
-        </Button>
+        <div className="divNextButton">
+          <Button
+            onClick={() => {
+              setPageState(pageState + 1);
+              window.scroll(0, 0);
+            }}
+            disabled={pageState >= usersData.totalPages ? true : false}
+          >
+            Siguiente
+          </Button>
+        </div>
       </div>
       <p>{`${usersData.page}/${usersData.totalPages}`}</p>
     </Container>

@@ -9,8 +9,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: flex-start;
   }
-  /* .boxAfter {
-    display: flex;
-    justify-content: flex-end;
-  } */
+  .divNextButton {
+    margin-left: 1rem;
+  }
 `;
