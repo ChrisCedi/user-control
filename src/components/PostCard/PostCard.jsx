@@ -29,6 +29,7 @@ export const PostCard = ({ post, user, handleId }) => {
               <img
                 src={Images.closeIcon}
                 alt="close"
+                className="closeIcon"
                 onClick={() => setIsOpen(false)}
               />
             </div>

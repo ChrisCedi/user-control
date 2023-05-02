@@ -47,4 +47,7 @@ export const Card = styled.div`
       cursor: pointer;
     }
   }
+  .closeIcon {
+    height: 20px;
+  }
 `;
