@@ -29,4 +29,9 @@ export const Container = styled.section`
     font-size: 12px;
     color: red;
   }
+  .bodyModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;

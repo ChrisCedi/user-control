@@ -29,7 +29,7 @@ export const Card = styled.div`
   .divButtons {
     display: flex;
 
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
 `;

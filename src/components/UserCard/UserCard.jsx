@@ -23,10 +23,6 @@ export const UserCard = ({ user, showSiderbar }) => {
           <p>{user.email}</p>
         </div>
         <div className="divButtons">
-          <Button onClick={() => navigate(`posts/${user.id}`)}>
-            Publicaciones
-          </Button>
-
           <Button onClick={() => navigate(`albums/${user.id}`)}>Álbum</Button>
 
           <Button
@@ -36,6 +32,9 @@ export const UserCard = ({ user, showSiderbar }) => {
             }}
           >
             Editar
+          </Button>
+          <Button onClick={() => navigate(`posts/${user.id}`)}>
+            Publicaciones
           </Button>
         </div>
       </div>
